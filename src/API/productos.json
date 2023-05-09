@@ -1,8 +1,88 @@
-[
-    {"id":1,"marca":"lenovo","modelo":"strix1080","stock":10,"precio":150000},
-    {"id":2,"marca":"lenovo","modelo":"strix1080","stock":12,"precio":130000},
-    {"id":3,"marca":"samsung","modelo":"strix1080","stock":9,"precio":120000},
-    {"id":4,"marca":"samsung","modelo":"strix1080","stock":5,"precio":110000},
-    {"id":5,"marca":"asus","modelo":"strix1080","stock":50,"precio":250000},
-    {"id":6,"marca":"motorola","modelo":"g31","stock":30,"precio":80000}   
-]
+
+{
+
+    "productos":[
+    {
+        "id":1,
+        "tipo":"notebooks",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30569_Notebook_Gamer_Asus_Rog_Zephyrus_G14_14__QHD_Ryzen_7_4800HS_16GB__2x8GB__512GB_SSD_NVMe_GTX_1650_120Hz_W10_7030dae4-grn.jpg",
+        "marca":"Asus",
+        "modelo":"Zephyrus G14",
+        "stock":10,
+        "precio":539999
+    },
+    {
+        "id":2,
+        "tipo":"notebooks",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_31192_Notebook_Asus_Zenbook_UX371_4K_OLED_13.3__Core_I5_1135G7_8GB_1TB_SSD_NVMe_W10_2d9ce0d4-grn.jpg",
+        "marca":"Asus",
+        "modelo":"Zenbook UX371",
+        "stock":12,
+        "precio":468990
+    },
+    {
+        "id":3,
+        "tipo":"gabinetes",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_20250_Gabinete_Kolink_Void_Black_ARGB_ATX_Vidrio_Templado_f962dc11-grn.jpg",
+        "marca":"Gabinete Kolink",
+        "modelo":"Void Black",
+        "stock":9,
+        "precio":30650
+    },
+    {
+        "id":4,
+        "tipo":"gabinetes",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34567_Gabinete_Kolink_Inspire_K3_RGB__M-ATX_Vidrio_Templado_7306ef99-grn.jpg",
+        "marca":"Gabinete Kolink",
+        "modelo":"Inspire K3",
+        "stock":5,
+        "precio":24499
+    },
+    {
+        "id":5,
+        "tipo":"auriculares",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29258_Auriculares_Logitech_Astro_A10_White_Blue_PS4_Switch_XBOX_PC__89eac120-grn.jpg",
+        "marca":"Auriculares Logitech",
+        "modelo":"Astro A10",
+        "stock":20,
+        "precio":15260
+    },
+    {
+        "id":6,
+        "tipo":"auriculares",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34113_Auriculares_Cougar_VM410_Classic_14792ae8-grn.jpg",
+        "marca":"Auriculares Cougar",
+        "modelo":"VM410",
+        "stock":15,
+        "precio":80000
+    },
+    {
+        "id":7,
+        "tipo":"cooler",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_36111_Cooler_CPU_Silverstone_PF120_ARGB_V2_Water_Cooling_cc75118e-grn.jpg",
+        "marca":"Cooler CPU",
+        "modelo":"Silverstone PF120",
+        "stock":15,
+        "precio":27350
+    },
+    {
+        "id":8,
+        "tipo":"cooler",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30232_Cooler_CPU_Be_quiet__PURE_LOOP_360_1d345c7c-grn.jpg",
+        "marca":"Cooler CPU",
+        "modelo":"PL 360",
+        "stock":15,
+        "precio":50100
+    },
+    {
+        "id":9,
+        "tipo":"monitores",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_13394_Monitor_Gamer_Samsung_24__G50_Curvo_144Hz_Full_HD_f473d83a-grn.jpg",
+        "marca":"Monitor Samsung",
+        "modelo":"G50",
+        "stock":15,
+        "precio":84899
+    }]
+
+}
+

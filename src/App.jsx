@@ -9,11 +9,10 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar/>
-      <ItemListContainer/>
       <Routes>
          <Route exact path="/" element={<ItemListContainer/>}/>
-         <Route exact path="/category/:categoryId" element={<ItemListContainer/>}/>
-         <Route exact path="/item/:id" element={<ItemDetailContainer/>}></Route>
+         <Route exact path="/category/:id" element={<ItemListContainer/>}/>
+         <Route exact path="/item/:tipo" element={<ItemDetailContainer/>}></Route>
       </Routes>
     </BrowserRouter>
   );
