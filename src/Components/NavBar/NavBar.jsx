@@ -2,23 +2,21 @@ import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 import {Link} from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({category}) => {
   return (
     <div className="navbar">
       <Link to={"/"}>
         <p className="navbar__title-content">EnjoyThePCWORLD</p>
       </Link>
       <div className="navbar__category">
-        <Link className="navbar-item" to={"/"}>Home</Link>
-        <Link className="navbar-item" to={"/category/1"}>Notebooks</Link>
-        <Link className="navbar-item" to={"/category/2"}>Auriculares</Link>
-        <Link className="navbar-item" to={"/category/3"}>Monitores</Link>
-        <Link className="navbar-item" to={"/category/3"}>Gabinetes</Link>
-        <Link className="navbar-item" to={"/category/3"}>Monitores</Link>
+      {category.map((cat) => 
+        {
+          return <Link to={`/category/${cat.id}`}>{cat.tipo}</Link>;
+        })}
       </div>
       <CartWidget />
     </div>
   );
 };
 
-export default NavBar;  
+export default NavBar;    

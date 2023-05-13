@@ -1,0 +1,4 @@
+.buttonDetail{
+    display: grid;
+    place-content: center;
+}
