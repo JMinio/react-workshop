@@ -1,10 +1,10 @@
-import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from "./Components/NavBar/NavBar";
+import {NavBar} from "./Components/NavBar/NavBar";
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 import ItemDetail from './Components/ItemDetail/ItemDetail';
 import categoryMock from "./API/productos.json";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

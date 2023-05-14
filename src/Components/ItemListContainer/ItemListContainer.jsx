@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import mockCatalogo from "../../API/productos.json";
 import {Spinner} from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const ItemListContainer = () =>{
 
     const [product, setProduct] = useState([]);   
-
     const {categoryId} = useParams();
 
     const getProductsList = new Promise ((res, rej)=>{
@@ -18,20 +18,24 @@ const ItemListContainer = () =>{
     });
 
     useEffect(()=>{
-        getProductsList
-        .then((res)=>{
-                const producto = res.productos;
+        getProductsList.then((response)=>{
+            
+                /* setProduct(res.productos); */
+                const producto = response.productos;
 
                 if(categoryId !== 0){
-                    const productoFiltrado = 
-                    producto.filter((prod) => prod.category === categoryId);
+                    const productoFiltrado = producto.filter(
+                        (prod) => prod.category === categoryId
+                    );
                     setProduct(productoFiltrado);
-                }else{
-                    setProduct(producto)
                 }
-            })
+                else
+                {
+                    setProduct(producto);
+                }
+            });
+
     }, [categoryId]);
-    console.log(product);
 
     //si no hay ningun producto, se carga el spinner, sino, los productos.
 
