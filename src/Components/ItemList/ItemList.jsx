@@ -2,9 +2,6 @@ import Item from "../Item/Item";
 import "./ItemList.css"
 
 const ItemList = ({catalogoProductos}) => {
-
-    console.log(catalogoProductos);
-
   return (
     <div className="item-list">
     {catalogoProductos.map((prod) => {

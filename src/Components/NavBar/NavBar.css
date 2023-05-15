@@ -7,6 +7,7 @@
     justify-content: space-between;
 }
 .navbar__title-content{
+    margin-left: 2%;
     font-size: 1.5rem;
     transform: translateY(7px);
 }

@@ -1,24 +1,33 @@
 import useCount from "./hook/useCount";
-import "./ItemCount.css"
+import "./ItemCount.css";
+import { Link } from "react-router-dom";
 
-const ItemCount = () => {
+const ItemCount = ({type, stock}) => {
 
-    const {number, increment, decrement, resetNumber} = useCount(1, 0, 10);
+    const {number, increment, decrement, resetNumber} = useCount(1, 0, stock);
 
     return(
         <>
-        <div className="item-box">            
-            <div className="stock-control">
-                <button onClick={increment}>+</button>
-                <b>{number}</b>
-                <button onClick={decrement} >-</button>
-            </div>
-            <div className="more-functions">
-                <button className="reset" onClick={resetNumber} >Reset</button>
-                <button className="addCart">
-                    Add to cart
-                </button>
-            </div>
+        <div className="item-box">
+            {
+                type=="button" && (
+                    <div className="stock-control">
+                        <button onClick={increment}>+</button>
+                        <b>{number}</b>
+                        <button onClick={decrement} >-</button>
+                    </div>
+                )}
+                {
+                    type == "select" && (
+                        <select>
+                            <option>{stock}</option>
+                        </select>
+                )}
+                <div className="more-functions">
+                    <Link to={'/cart'}>
+                        <button className="addCart">Add to cart</button>
+                    </Link>
+                </div>
         </div>
         </>
     )

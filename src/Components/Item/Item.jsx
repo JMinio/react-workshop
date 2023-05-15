@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 import "./Item.css";
 import Button from "react-bootstrap/Button";
 import ListGroup from 'react-bootstrap/ListGroup';
-import ItemCount from "../ItemCount/ItemCount";
 
-const Item = ({id,img,tipo,marca,modelo,stock,precio}) => {
+
+const Item = ({img,marca,modelo,stock,precio}) => {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={img} />
@@ -18,9 +18,13 @@ const Item = ({id,img,tipo,marca,modelo,stock,precio}) => {
       </ListGroup>
       <Card.Body className="buttonDetail">
         <Button variant="dark">
-          <Link to={"/item/1"}>Detalle</Link>
+          <Link 
+          to={"/item/1"}
+          state={{img, marca, modelo, stock, precio}}
+          >
+            Detalle
+          </Link>
         </Button>
-        {/* <ItemCount/> */}
       </Card.Body>
     </Card>
   )

@@ -4,40 +4,32 @@ import { useEffect, useState } from "react";
 import mockCatalogo from "../../API/productos.json";
 import {Spinner} from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const ItemListContainer = () =>{
 
-    const [product, setProduct] = useState([]);   
-    const {categoryId} = useParams();
+    const {categoryId} = useParams(); //buscamos este parametro de la url
 
-    const getProductsList = new Promise ((res, rej)=>{
+    const [product, setProduct] = useState([]);
+
+    const getProductList = new Promise ((resolve, reject) =>{
         setTimeout(()=>{
-            res(mockCatalogo);
-        }, 1500);
+            resolve(mockCatalogo);
+        }, 500)
     });
 
     useEffect(()=>{
-        getProductsList.then((response)=>{
-            
-                /* setProduct(res.productos); */
-                const producto = response.productos;
+        getProductList.then((resolve)=>{
+            const producto = resolve.productos;
 
-                if(categoryId !== 0){
-                    const productoFiltrado = producto.filter(
-                        (prod) => prod.category === categoryId
-                    );
-                    setProduct(productoFiltrado);
-                }
-                else
-                {
-                    setProduct(producto);
-                }
-            });
+            if(categoryId!=0){
+                const productosFiltrados = producto.filter((prod) => prod.category == categoryId)
+                setProduct(productosFiltrados);
+            } else {
+                setProduct(producto);
+            }
 
-    }, [categoryId]);
-
-    //si no hay ningun producto, se carga el spinner, sino, los productos.
+        })
+    }, [categoryId]) //colocamos el parametro para que cada que se actualice, se rendericen los productos
 
     return product.length > 0 ? (
         <ItemList catalogoProductos = {product}/>

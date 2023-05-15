@@ -1,0 +1,28 @@
+{
+    "category":[
+        {
+            "id":0,
+            "tipo": "Home"
+        },
+        {
+            "id":1,
+            "tipo": "Notebook"
+        },
+        {
+            "id":2,
+            "tipo": "Gabinete"
+        },
+        {
+            "id":3,
+            "tipo": "Auriculares"
+        },
+        {
+            "id":4,
+            "tipo": "Coolers"
+        },
+        {
+            "id":5,
+            "tipo": "Monitores"
+        }
+    ]
+}

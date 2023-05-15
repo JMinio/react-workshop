@@ -2,8 +2,8 @@
     "productos":[
     {
         "id":1,
-        "tipo":"Notebook",
         "category":1,
+        "tipo":"Notebook",
         "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30569_Notebook_Gamer_Asus_Rog_Zephyrus_G14_14__QHD_Ryzen_7_4800HS_16GB__2x8GB__512GB_SSD_NVMe_GTX_1650_120Hz_W10_7030dae4-grn.jpg",
         "marca":"Asus",
         "modelo":"Zephyrus G14",

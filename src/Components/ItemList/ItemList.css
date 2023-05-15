@@ -1,3 +1,6 @@
 .item-list {
     display: flex;
+    flex-wrap: wrap;
+    padding: 5% 10%;
+    gap: 20px;
 }
