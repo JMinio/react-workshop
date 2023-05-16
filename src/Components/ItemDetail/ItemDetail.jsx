@@ -1,5 +1,6 @@
 import {useLocation} from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
+import "./ItemDetail.css";
 
 import Card from "react-bootstrap/Card";
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -11,18 +12,16 @@ const ItemDetail = () => {
   return (
     <>
       <div>
-      <Card className="cardDetail" style={{ width: '36rem'}}>
-      <Card.Img variant="top" src={img} />
-      <Card.Body>
-        <Card.Title>{marca} {modelo}</Card.Title>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Unidades disponibles: {stock}</ListGroup.Item>
-        <ListGroup.Item>Precio: ${precio}</ListGroup.Item>
-      </ListGroup>
-      <Card.Body className="buttonDetail">
-        <ItemCount type="button" stock={stock}/>
-      </Card.Body>
+      <Card className="cardDetail">
+        <Card.Img variant="top" src={img} />
+        <Card.Body className="body">
+            <Card.Title className="cardDetail-title">{marca} {modelo}</Card.Title>
+            <ListGroup className="list-group-flush">
+              <ListGroup.Item>Unidades disponibles: {stock}</ListGroup.Item>
+              <ListGroup.Item>Precio: ${precio}</ListGroup.Item>
+              <ItemCount type="button" stock={stock}/>
+            </ListGroup>
+        </Card.Body>
     </Card>
       </div>
     </>
