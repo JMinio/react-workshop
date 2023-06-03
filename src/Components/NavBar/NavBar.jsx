@@ -10,7 +10,7 @@ export const NavBar = ({category}) => {
 
       {category.map((cat) => 
         {
-          return <Link className="navbar-item" to={`/category/${cat.id}`}>{cat.tipo}</Link>;
+          return <Link className="navbar-item" key={cat.id} to={`/category/${cat.id}`}>{cat.tipo}</Link>;
         })}
         </div>
       <CartWidget/>

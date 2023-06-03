@@ -1,13 +1,20 @@
 import {useLocation} from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
-
-import Card from "react-bootstrap/Card";
-import ListGroup from 'react-bootstrap/ListGroup';
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = () => {
   const {state} = useLocation();
   const {img, marca, modelo, stock, precio} = state;
+  const {addItem, remove} = useContext(CartContext);
+
+  const handCount = (count) => {
+    addItem(count);
+  }
+  const removeCount = (count)=> {
+        remove(count);
+  }
 
   return (
     <>
@@ -20,7 +27,7 @@ const ItemDetail = () => {
           <ul>
             <li>Unidades disponibles: <b>{stock}</b></li>
             <li>Precio: <b>${precio}</b> </li>
-            <ItemCount stock={stock}/>
+            <ItemCount  onChangeCount={(x)=> handCount(x)} onRemoveCount={(x)=> removeCount(x)} stock={stock}/>
           </ul>
         </div>
       </div>

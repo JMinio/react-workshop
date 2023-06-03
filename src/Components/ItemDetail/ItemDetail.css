@@ -1,20 +1,3 @@
-/* .cardDetail.card{
-    display: flex;
-    flex-direction: row;
-}
-
-.cardDetail img{
-    width: 50%;
-    padding: 3% 5% 0 5%;
-}
-
-.cardDetail .body{
-    margin-top: 3%;
-}
-
-.cardDetail .body .card.title{
-    color: red;
-} */
 
 .carDetail{
     display: flex;

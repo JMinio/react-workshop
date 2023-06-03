@@ -1,3 +1,7 @@
-.cart i{
+.cart-widget{
     transform: translateX(-30px);
+}
+
+a i{
+    color:#fff;
 }
