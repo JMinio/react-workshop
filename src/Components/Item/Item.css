@@ -2,3 +2,7 @@
     display: grid;
     place-content: center;
 }
+.buttonDetail a{
+    color: #fff;
+    text-decoration: none;
+}

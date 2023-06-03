@@ -11,18 +11,18 @@ const ItemDetail = () => {
 
   return (
     <>
-      <div>
-      <Card className="cardDetail">
-        <Card.Img variant="top" src={img} />
-        <Card.Body className="body">
-            <Card.Title className="cardDetail-title">{marca} {modelo}</Card.Title>
-            <ListGroup className="list-group-flush">
-              <ListGroup.Item>Unidades disponibles: {stock}</ListGroup.Item>
-              <ListGroup.Item>Precio: ${precio}</ListGroup.Item>
-              <ItemCount type="button" stock={stock}/>
-            </ListGroup>
-        </Card.Body>
-    </Card>
+      <div className="carDetail">
+        <div className="photo">
+          <img src={img} alt="product-photo"/>
+        </div>
+        <div className="body">
+          <h1>{marca} {modelo}</h1>
+          <ul>
+            <li>Unidades disponibles: <b>{stock}</b></li>
+            <li>Precio: <b>${precio}</b> </li>
+            <ItemCount stock={stock}/>
+          </ul>
+        </div>
       </div>
     </>
   );

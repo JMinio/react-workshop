@@ -1,65 +1,24 @@
 
-.item-box h1{
-    text-align: center;
-    background-color: black;
-    color: gray;
-}
-
-.item-box img{
-    width: 100%;
-    margin-bottom: 1%;
-}
-.stock-control{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    border-radius: 5px;
-}
-
-.stock-control button{
-    border:1px solid #000;
-    border-radius: 5px;
-    width: 40%;
+.aumentar-restar .btn{
+    width: 15%;
+    height: 40px;
+    color: #000;
+    margin-right: 2%;
+    background-color: #e0b010;    
     font-weight: bold;
 }
-.stock-control button:hover{
-    background-color: #000;
-    color: #fff;
-    transition: .5s ease-out;
+.aumentar-restar .btn:hover{
+    background-color: #bb930e;
+    
 }
 
-.stock-control b{
+
+
+.aumentar-restar .addCart{
+    background-color: orangered;
     color: #000;
-}
-
-button{
-    width: 100px;
-    color: black;
-}
-
-.more-functions {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.more-functions button{
-    color: #fff;
-    background-color: #000;
-    width: 100%;
-    border-radius: 5px;
-}
-
-.more-functions button:hover{
-    color: #000;
-    background-color: blueviolet;
-}
-
-.addCart{
-    margin-top: 2%;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: .4% 4%;
 }

@@ -1,8 +1,8 @@
 import Card from "react-bootstrap/Card";
 import {Link} from "react-router-dom";
-import "./Item.css";
 import Button from "react-bootstrap/Button";
 import ListGroup from 'react-bootstrap/ListGroup';
+import "./Item.css";
 
 
 const Item = ({img,marca,modelo,stock,precio}) => {
@@ -18,7 +18,7 @@ const Item = ({img,marca,modelo,stock,precio}) => {
       </ListGroup>
       <Card.Body className="buttonDetail">
         <Button variant="dark">
-          <Link 
+          <Link
           to={"/item/1"}
           state={{img, marca, modelo, stock, precio}}
           >
