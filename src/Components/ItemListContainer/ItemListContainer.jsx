@@ -17,24 +17,25 @@ const ItemListContainer = () =>{
         }, 500)
     });
 
-    useEffect(()=>{
+    useEffect(()=>{  //renderizado de la lista de productos
         getProductList.then((resolve)=>{
+
             const producto = resolve.productos;
 
-            if(categoryId!=0){
-                const productosFiltrados = producto.filter((prod) => prod.category == categoryId)
+            if(categoryId){ //filtro para mostrar productos por categoria
+                const productosFiltrados = producto.filter(
+                    (prod) => prod.category == categoryId || categoryId == 0);
                 setProduct(productosFiltrados);
-            } else {
-                setProduct(producto);
             }
-
+            setProduct(producto);
+            return;
         })
     }, [categoryId]) //colocamos el parametro para que cada que se actualice, se rendericen los productos
 
-    return product.length > 0 ? (
+    return product.length > 0 ? ( //rendering conditional
         <ItemList catalogoProductos = {product}/>
     ) :(
-        <Spinner animation="grow"/>
+        <Spinner className="spinner" animation="grow"/>
     );
 } 
 
