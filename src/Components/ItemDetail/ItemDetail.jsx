@@ -20,7 +20,7 @@ const ItemDetail = () => {
     <>
       <div className="carDetail">
         <div className="photo">
-          <img src={img} alt="product-photo"/>
+          <img src={img} alt="product"/>
         </div>
         <div className="body">
           <h1>{marca} {modelo}</h1>

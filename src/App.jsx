@@ -4,21 +4,21 @@ import {NavBar} from "./Components/NavBar/NavBar";
 import ItemDetail from './Components/ItemDetail/ItemDetail';
 /* import categoryMock from "./API/category.json"; */
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {getFirestore, getDocs, collection} from 'firebase/firestore';
 import { useEffect, useState } from 'react';
-
+import { getCollection, getItems } from './Utils/getFirestore';
 
 function App() {
   const [categoria, setCategoria] = useState();
 
   useEffect(()=>{
-    const db = getFirestore();
-    const categoriaCollection = collection(db, "categorias");
-    getDocs(categoriaCollection).then((snapshots)=>{ 
-      setCategoria(
-        snapshots.docs.map( (doc)=>({id: doc.id, ...doc.data()}))
-        );
+    getCollection('categorias').then((res) => {    //getCollection hace el llamado a firebase para el navbar
+      setCategoria(res)
+    });
+
+    getItems('categorias', "YGrwt6ivNNvDDoHaUkiJ").then((res)=>{
+      console.log(res)
     })
+
   }, []);
 
   return (

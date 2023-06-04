@@ -1,9 +1,10 @@
 import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 import { useEffect, useState } from "react";
-import mockCatalogo from "../../API/productos.json";
-import {Spinner} from "react-bootstrap";
+/* import mockCatalogo from "../../API/productos.json";
+ */import {Spinner} from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { getCollection } from "../../Utils/getFirestore";
 
 const ItemListContainer = () =>{
 
@@ -11,7 +12,17 @@ const ItemListContainer = () =>{
 
     const [product, setProduct] = useState([]);
 
-    const getProductList = new Promise ((resolve, reject) =>{
+    const getListItem = () => {
+        getCollection("items").then((result) => {
+          console.log(result);
+          setProduct(result);
+        });
+      };
+      useEffect(() => {
+        getListItem();
+      }, []);
+    
+    /* const getProductList = new Promise ((resolve, reject) =>{
         setTimeout(()=>{
             resolve(mockCatalogo);
         }, 500)
@@ -29,9 +40,10 @@ const ItemListContainer = () =>{
             }
             setProduct(producto);
             return;
-        })
+        });
+        //eslint-disable-next-line
     }, [categoryId]) //colocamos el parametro para que cada que se actualice, se rendericen los productos
-
+ */
     return product.length > 0 ? ( //rendering conditional
         <ItemList catalogoProductos = {product}/>
     ) :(
