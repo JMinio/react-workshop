@@ -2,16 +2,14 @@
 .carDetail{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin-top: 4%;
 }
-    .carDetail h1{
-        margin-bottom: 5%;
-    }
     .carDetail ul{
         font-size: 2em;
         list-style: none;
     }
-
 
 .carDetail .photo{
     width: 50%;
@@ -19,10 +17,34 @@
 }
     .carDetail .photo img{
         margin-left: 10%;
-        padding: 5% 10%;
+        padding: 10%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
 .carDetail .body{
     width: 50%;
+    transform: translateY(-100px);
+}
+.carDetail .body h1{
+    font-size: 5rem;
+}
+
+@media (max-width:1400px){
+    .carDetail{
+        display: flex;
+        flex-direction: column;
+    }
+    .carDetail .body{
+        width: 100%;
+        margin-top: 5%;
+        margin-left:2%;
+        transform: translateY(0px);
+    }
+    .carDetail .body h1{
+        font-size: 5rem;
+    }
+    
+    .carDetail .photo{
+        width: 100%;
+    }
 }

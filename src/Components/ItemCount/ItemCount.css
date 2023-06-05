@@ -1,20 +1,27 @@
 .aumentar-restar .btn{
     width: 15%;
     height: 40px;
-    color: #000;
+    color: #fff;
     margin-right: 2%;
-    background-color: #e0b010;    
+    background-color: #000;    
     font-weight: bold;
 }
 .aumentar-restar .btn:hover{
-    background-color: #bb930e;
+    background-color: darkslategray;
+    color: #fff;
     
 }
 .aumentar-restar .addCart{
-    background-color: orangered;
+    background-color: darkslategray;
     color: #000;
     border: none;
-    border-radius: 10px;
+    border-radius: 2px;
     font-size: 1.5rem;
     padding: .4% 4%;
+}
+
+@media (max-width:1400px){
+    .aumentar-restar .addCart{
+        transform: translateX(200%);
+    }
 }

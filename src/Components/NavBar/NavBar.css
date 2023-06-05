@@ -6,16 +6,18 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .navbar__title-content{
-    margin-left: 2%;
+    margin-left: 25%;
     font-size: 1.5rem;
-    transform: translateY(7px);
+    text-decoration: none;
+    color: #fff;
 }
 
 .navbar__category {
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 70%;
     justify-content: space-evenly;
 }
 
@@ -41,3 +43,22 @@
     .navbar-item:hover::before{
         width: 100%;
     }
+
+@media (max-width:780px){
+    .navbar{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar__title-content{
+        margin-left: 0%;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .navbar__category{
+        display: flex;
+        flex-direction: column;
+    }
+}   
