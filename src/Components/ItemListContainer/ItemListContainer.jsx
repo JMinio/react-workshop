@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 /* import mockCatalogo from "../../API/productos.json";
  */import {Spinner} from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { getCollection } from "../../Utils/getFirestore";
+import { getCollection} from "../../Utils/getFirestore";
+import { getFirestore, collection, getDocs, query, where } from "@firebase/firestore";
 
 const ItemListContainer = () =>{
 
@@ -12,15 +13,30 @@ const ItemListContainer = () =>{
 
     const [product, setProduct] = useState([]);
 
+    useEffect(()=> {
+        const db = getFirestore();
+        const getCollection = collection(db,"items");
+
+        if(categoryId){
+            const queryFilter = query(getCollection, where("categoryId", "==", categoryId))
+            getDocs(queryFilter)
+                .then(res=> setProduct(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+        }else{
+            getDocs(getCollection)
+            .then(res => setProduct(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+        }
+        
+    },[categoryId])
+
+    /* 
     const getListItem = () => {
-        getCollection("items").then((result) => {
-          console.log(result);
-          setProduct(result);
+        getCollection('items').then((result) => {        
+            setProduct(result);
         });
       };
       useEffect(() => {
         getListItem();
-      }, []);
+      }, []); */
     
     /* const getProductList = new Promise ((resolve, reject) =>{
         setTimeout(()=>{

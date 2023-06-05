@@ -2,14 +2,18 @@ import useCount from "./hook/useCount";
 import "./ItemCount.css";
 import { Link } from "react-router-dom";
 
-const ItemCount = ({stock, onChangeCount, onRemoveCount}) => {
+const ItemCount = ({stock, onChangeCount, onRemoveCount, onClickAddCart}) => {
 
     const { number, increment, decrement} = useCount(0, 0, stock);
     
-    const userChange = () => {
+    const userAdd = () => {
         increment();
         onChangeCount(number);
     }     
+    const addCart = () => {
+        onClickAddCart(number);
+    }
+
     const userRemove = () => {
         decrement();
         onRemoveCount(number);
@@ -24,7 +28,7 @@ const ItemCount = ({stock, onChangeCount, onRemoveCount}) => {
                         <button 
                             disabled={number==stock?true:false}
                             className="btn aumentar " 
-                            onClick={userChange}>
+                            onClick={userAdd}>
                             +
                         </button>
                         <button 
@@ -33,10 +37,14 @@ const ItemCount = ({stock, onChangeCount, onRemoveCount}) => {
                             onClick={userRemove}>
                             -
                         </button>
-                        <Link to={'/cart'}>
-                            <button className="addCart">Add to cart</button>
-                        </Link>
-                    </div>
+{/*                         <Link to={'/cart'}>
+ */}                    <button 
+                            className="addCart"
+                            onClick={addCart}>
+                                Add to cart
+                        </button>
+{/*                         </Link>
+ */}                    </div>
             </div>
         </>
     )

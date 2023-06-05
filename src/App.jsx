@@ -14,13 +14,13 @@ function App() {
     getCollection('categorias').then((res) => {    //getCollection hace el llamado a firebase para el navbar
       setCategoria(res)
     });
-
-    getItems('categorias', "YGrwt6ivNNvDDoHaUkiJ").then((res)=>{
+/* 
+    getItems('items', "TlwyWo176evk2JMfTo7e").then((res)=>{
       console.log(res)
-    })
+    }) */
 
   }, []);
-
+  
   return (
     <BrowserRouter>
       <NavBar category={categoria}/>

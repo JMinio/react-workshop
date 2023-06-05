@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { initializeApp } from "firebase/app";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 import App from './App';
 import { CartContextProvider } from './context/CartContext';
 
@@ -14,7 +16,7 @@ const firebaseConfig = {
   measurementId: "G-90T2E5FZGM"
 };
 
-initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
