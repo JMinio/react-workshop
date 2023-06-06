@@ -11,14 +11,14 @@ const ItemDetail = () => {
   const {img, marca, modelo, stock, precio} = state;
   const {addItem, remove} = useContext(CartContext);
 
-  const handCount = (count) => {
-    addItem(count);
+  const handCount = (number) => {
+    addItem(number);
   }
-  const removeCount = (count)=> {
-    remove(count);
+  const removeCount = (number)=> {
+    remove(number);
   }
 
-  const addOrder = (count) => {
+  /* const addOrder = (count) => {
     const item = {
       name:modelo,
       total:count,
@@ -32,7 +32,26 @@ const ItemDetail = () => {
         timer: 1500
       })
     })
-  } 
+  }  */
+  const addOrder = (number) => {
+
+    const item = {
+      name: marca,
+      price: precio,
+      total:number * precio,
+    }
+
+    createOrder(item).then((result)=>{
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: `Producto agregado al carrito!`,
+        showConfirmButton: false,
+        timer: 2000
+      })
+      console.log(result)
+    })
+  }
 
   return (
     <>
@@ -50,9 +69,6 @@ const ItemDetail = () => {
             onRemoveCount={(x)=> removeCount(x)} 
             onClickAddCart={(x)=> addOrder(x)}
             stock={stock}/>
-            {/* <div className="updCompra">
-              <button>Actualizar compra</button>
-            </div> */}
           </ul>
         </div>
       </div>
