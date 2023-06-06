@@ -3,7 +3,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { createOrder } from "../../Utils/createUpdateFirestore";
+import { createOrder, updateOrder } from "../../Utils/createUpdateFirestore";
 import Swal from "sweetalert2";
 
 const ItemDetail = () => {
@@ -17,30 +17,12 @@ const ItemDetail = () => {
   const removeCount = (number)=> {
     remove(number);
   }
-
-  /* const addOrder = (count) => {
-    const item = {
-      name:modelo,
-      total:count,
-    }; 
-    createOrder(item).then((result)=> {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: `Orden N°${result} creada!`,
-        showConfirmButton: false,
-        timer: 1500
-      })
-    })
-  }  */
   const addOrder = (number) => {
-
     const item = {
       name: marca,
       price: precio,
       total:number * precio,
     }
-
     createOrder(item).then((result)=>{
       Swal.fire({
         position: 'top-end',
@@ -48,8 +30,23 @@ const ItemDetail = () => {
         title: `Producto agregado al carrito!`,
         showConfirmButton: false,
         timer: 2000
-      })
-      console.log(result)
+      })})
+  }
+
+  const updateCart = (number) => {
+    Swal.fire({
+      title: '¿Quieres modificar el pedido?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      denyButtonText: `No`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        updateOrder(number);
+        Swal.fire('Listo! Cambio guardado!', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('No se realizo ninguna modificacion!', '', 'info')
+      }
     })
   }
 
@@ -68,6 +65,7 @@ const ItemDetail = () => {
             onChangeCount={(x)=> handCount(x)} 
             onRemoveCount={(x)=> removeCount(x)} 
             onClickAddCart={(x)=> addOrder(x)}
+            onClickUpdateCart={(x)=> updateCart(x)}
             stock={stock}/>
           </ul>
         </div>

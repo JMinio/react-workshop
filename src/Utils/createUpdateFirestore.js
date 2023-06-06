@@ -1,7 +1,9 @@
 import {
     getFirestore, 
     addDoc,
-    collection
+    doc,
+    collection,
+    updateDoc
 } from 'firebase/firestore';
 
 export const createOrder = async (items) => {
@@ -26,3 +28,11 @@ export const createOrder = async (items) => {
         return id;
     })
 };
+
+export const updateOrder = async (id) => {
+    const db = getFirestore(); //conexion a la db
+    const orderDoc = doc(db, "orders", "MF7N7rj8PbrzGgGSvrp6") //buscamos en la db, en la coleccion "orders", el documento...
+    updateDoc(orderDoc, {total: 15500}).then((result) => {
+        console.log(result)
+    }) //modificamos el item...    
+}
