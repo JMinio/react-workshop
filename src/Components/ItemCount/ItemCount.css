@@ -22,6 +22,7 @@
 
 @media (max-width:1400px){
     .aumentar-restar .addCart{
-        transform: translateX(200%);
+        margin-left: 10px;
+        transform: translateX(100px);
     }
 }

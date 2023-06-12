@@ -6,6 +6,7 @@ import ItemDetail from './Components/ItemDetail/ItemDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import { getCollection} from './Utils/getFirestore';
+import { Cart } from './Components/Carrito/Cart';
 
 function App() {
   const [categoria, setCategoria] = useState();
@@ -24,7 +25,7 @@ function App() {
          <Route exact path="/category/:categoryId" element={<ItemListContainer/>}/>
          <Route exact path="/item/:itemId" element={<ItemDetail/>}></Route>
          <Route exact path="*" element={ <h1>404 NOT FOUND</h1> }></Route>
-         <Route exact path="/cart" element={<h1> Bienvenido al carrito de compras</h1>}></Route>
+         <Route exact path="/cart" element={<Cart/>}></Route>
       </Routes>
     </BrowserRouter>
   );

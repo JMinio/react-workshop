@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import "./Item.css";
 
 
-const Item = ({img,marca,modelo,stock,precio}) => {
+const Item = ({img,marca,modelo,stock,precio,key}) => {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={img} />
@@ -19,7 +19,7 @@ const Item = ({img,marca,modelo,stock,precio}) => {
       <Card.Body className="buttonDetail">
         <Button variant="dark">
           <Link
-          to={"/item/1"}
+          to={`/item/${key}`}
           state={{img, marca, modelo, stock, precio}}
           >
             Detalle

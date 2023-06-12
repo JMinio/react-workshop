@@ -1,0 +1,31 @@
+.flex-list{
+    width: 60%;
+    display:flex;
+    margin: 0 auto;
+    justify-content:space-around;
+    padding: 2%;
+    align-items: center;
+}
+
+.description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    justify-content: space-around;
+}
+
+.removeItem{
+    background-color: cadetblue;
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.removeItem:hover{
+    background-color: brown;
+    color:#fff;
+    transition: .5s;
+
+}
